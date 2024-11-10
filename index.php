@@ -134,6 +134,18 @@
                                     </div>
                                 </div>                                
                             </div>
+
+                            <div class="col-md-4">                                
+                                <div class="text-column text-column-centralized tex-column-icon-lg this-animate" data-animate="fadeInRight" style="cursor: pointer;" onclick="menujuaplikasi('cintatepe/index.php')">
+                                    <div class="text-column-icon">
+                                        <img src="img/logo/cintatepe.png" height="100px">
+                                    </div>
+                                    <h4>Cinta TEPE</h4>
+                                    <div class="text-column-info">
+                                        Aplikasi Backup dari Aplikasi Sahabat TEPE</strong>.
+                                    </div>
+                                </div>                                
+                            </div>
                         </div>
                         
                         <br><br><br><br><br><br><br><br><br><br><br>
