@@ -44,7 +44,7 @@
         include('..\modul\pengaturan\KoneksiDBPorste.php');    
     ?>
 </head>
-<body onload="kondisiload()">
+<body onload="kondisiload()" >
 <div class="container">
     <div class="row">
         <div class="col-12">
@@ -55,7 +55,7 @@
                             <div class="search-result">
                                 <div class="result-body">
                                     <div class="table-responsive">
-                                        <button type="button" onclick="window.history.go(-1); return false;" class="btn btn-primary"><i class="fas fa-backward"></i>&nbsp;&nbsp;Kembali</button>
+                                        <button type="button" onclick="window.history.go(-1); Location.reload ();" class="btn btn-primary"><i class="fas fa-backward"></i>&nbsp;&nbsp;Kembali</button>
                                         <?php
                                             $kuery="SELECT * FROM caseviews where case_id='" . $_GET['idtemuan'] . "'";
 
@@ -118,6 +118,9 @@
 
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../js/sweetalert2/package/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="../js/sweetalert2/package/dist/sweetalert2.min.css">
 
 <script type="text/javascript">
 

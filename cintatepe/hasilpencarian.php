@@ -79,7 +79,7 @@
         
     ?>
 </head>
-<body onload="kondisiload()">
+<body onload="kondisiload()" onbeforeunload="kondisiload()">
 <div class="container">
 <div class="row">
     <div class="col-lg-12 card-margin">
@@ -186,7 +186,7 @@
                                                             <tr>
                                                                 <td>
                                                                     <div class="widget-26-job-title">
-                                                                        <a href="detailtemuan.php?idtemuan=<?php echo $valuehasil['case_id'] ?>"><b><?php echo $valuehasil['case_name'] ?></b></a>
+                                                                        <a onclick="loadhalaman()" href="detailtemuan.php?idtemuan=<?php echo $valuehasil['case_id'] ?>"><b><?php echo $valuehasil['case_name'] ?></b></a>
                                                                         <p class="m-0">
                                                                             <?php echo substr($valuehasil['condition'],0,200) ?> . . . <span class="text-muted time"><br>
                                                                             <?php echo $valuehasil['slate_name'] ?></span>
@@ -229,7 +229,7 @@
                                 {
                                     ?>
                                         <li class="page-item">
-                                            <a class="page-link no-border" href="<?php echo $linkhalaman . $halaman - 1 ?>">
+                                            <a class="page-link no-border" onclick="loadhalaman()" href="<?php echo $linkhalaman . $halaman - 1 ?>">
                                                 <span aria-hidden="true">«</span>
                                                 <span class="sr-only">Sebelumnya</span>
                                             </a>
@@ -243,12 +243,12 @@
                                 if ($start > 1) 
                                 {
                                     ?>
-                                        <li class="page-item"><a class="page-link no-border" href="<?php echo $linkhalaman . "1" ?>">1</a></li>
+                                        <li class="page-item"><a class="page-link no-border" onclick="loadhalaman()" href="<?php echo $linkhalaman . "1" ?>">1</a></li>
                                     <?php
                                     if ($start > 2) 
                                     {
                                         ?>
-                                            <li class="page-item"><a class="page-link no-border" href="#">...</a></li>
+                                            <li class="page-item"><a class="page-link no-border" onclick="loadhalaman()" href="#">...</a></li>
                                         <?php
                                     }
                                 }
@@ -257,13 +257,13 @@
                                     if ($i == $halaman) 
                                     {
                                         ?>
-                                            <li class="page-item active"><a class="page-link no-border" href="<?php echo $linkhalaman . $i ?>"><?php echo $i ?></a></li>
+                                            <li class="page-item active"><a class="page-link no-border" onclick="loadhalaman()" href="<?php echo $linkhalaman . $i ?>"><?php echo $i ?></a></li>
                                         <?php
                                     } 
                                     else 
                                     {
                                         ?>
-                                            <li class="page-item"><a class="page-link no-border" href="<?php echo $linkhalaman . $i ?>"><?php echo $i ?></a></li>
+                                            <li class="page-item"><a class="page-link no-border" onclick="loadhalaman()" href="<?php echo $linkhalaman . $i ?>"><?php echo $i ?></a></li>
                                         <?php
                                     }
                                 }
@@ -274,11 +274,11 @@
                                     if ($end < $totalhalaman - 1) 
                                     {
                                         ?>
-                                            <li class="page-item"><a class="page-link no-border" href="#">...</a></li>
+                                            <li class="page-item"><a class="page-link no-border" onclick="loadhalaman()" href="#">...</a></li>
                                         <?php
                                     }
                                     ?>
-                                        <li class="page-item"><a class="page-link no-border" href="<?php echo $linkhalaman . $totalhalaman ?>"><?php echo $totalhalaman ?></a></li>
+                                        <li class="page-item"><a class="page-link no-border" onclick="loadhalaman()" href="<?php echo $linkhalaman . $totalhalaman ?>"><?php echo $totalhalaman ?></a></li>
                                     <?php
                                 }
 
@@ -286,7 +286,7 @@
                                 {
                                     ?>
                                         <li class="page-item">
-                                            <a class="page-link no-border" href="<?php echo $linkhalaman . $halaman + 1 ?>">
+                                            <a class="page-link no-border" onclick="loadhalaman()" href="<?php echo $linkhalaman . $halaman + 1 ?>">
                                                 <span aria-hidden="true">»</span>
                                                 <span class="sr-only">Next</span>
                                             </a>
@@ -310,6 +310,9 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="../js/sweetalert2/package/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="../js/sweetalert2/package/dist/sweetalert2.min.css">
+
 <script type="text/javascript">
 
 
@@ -329,15 +332,45 @@
         }
     }
 
+    function kondisiload()
+    {
+        swal.close();
+    }
+
 	function mulaicari()
     {
+        swal.fire(
+        {
+            title:"Menampilkan Data",
+            text: "Menunggu Untuk menampilkan data",
+            showConfirmButton: false,
+            imageUrl: "../js/sweetalert2/img/load.gif"
+        });
         halaman = "hasilpencarian.php?katakunci=" + $('#txtkatakunci').val();
         window.location=halaman;
+    }
+
+    function loadhalaman()
+    {
+        swal.fire(
+        {
+            title:"Menampilkan Data",
+            text: "Menunggu Untuk menampilkan data",
+            showConfirmButton: false,
+            imageUrl: "../js/sweetalert2/img/load.gif"
+        });
     }
 
     $("#txtkatakunci").on("keydown", function(event) {
       if(event.which == 13)
       {
+        swal.fire(
+        {
+            title:"Menampilkan Data",
+            text: "Menunggu Untuk menampilkan data",
+            showConfirmButton: false,
+            imageUrl: "../js/sweetalert2/img/load.gif"
+        });
         mulaicari();
       }
     });
