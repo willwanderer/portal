@@ -241,6 +241,15 @@
                                         </div>
                                         <div class="col-md-8">
                                             <div id="petasulsel" style="width: 100%; height: 460px"></div>
+                                            <div class="legend" id="legend">
+                                                <h4>Legend</h4><br><br>
+                                            </div>
+                                            <div id="details">
+                                                <img id="area-image" src="" alt="Area Image">
+                                                <h5 id="area-name">Select an area</h5>
+                                                <p id="area-description">Description will appear here.</p>
+                                                <button id="details-button">Show More</button>
+                                            </div>
                                         </div>
                                     </div>                                    
                                 </div>
@@ -524,23 +533,117 @@
 
             function loadmap()
             {
-                var map = L.map('petasulsel').setView([-4.2020144,119.8209562], 7);
-
-                var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                const map = L.map('petasulsel').setView([-4.2020144,119.8209562], 7);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; OpenStreetMap contributors'
                 }).addTo(map);
 
-                var logopemda = L.icon({
-                    iconUrl: '../img/LogoPemda/Bantaeng.png',
-                    iconSize:     [38, 'auto'], // size of the icon
-                    //iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-                    //shadowAnchor: [4, 62],  // the same for the shadow
-                    //popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+
+               const geojsonFiles = [
+                    { file: 'gjsonsulsel/7301.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7302.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7303.geojson', name: 'Area 7303' },
+                    { file: 'gjsonsulsel/7304.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7305.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7306.geojson', name: 'Area 7303' },
+                    { file: 'gjsonsulsel/7307.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7308.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7309.geojson', name: 'Area 7303' },
+                    { file: 'gjsonsulsel/7310.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7311.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7312.geojson', name: 'Area 7303' },
+                    { file: 'gjsonsulsel/7313.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7314.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7315.geojson', name: 'Area 7303' },
+                    { file: 'gjsonsulsel/7316.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7317.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7318.geojson', name: 'Area 7303' },
+                    { file: 'gjsonsulsel/7319.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7322.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7325.geojson', name: 'Area 7303' },
+                    { file: 'gjsonsulsel/7371.geojson', name: 'Area 7302' },
+                    { file: 'gjsonsulsel/7373.geojson', name: 'Area 7303' }
+                ];
+
+                // Function to generate a random color
+                function generateRandomColor() {
+                    const letters = '0123456789ABCDEF';
+                    let color = '#';
+                    for (let i = 0; i < 6; i++) {
+                        color += letters[Math.floor(Math.random() * 16)];
+                    }
+                    return color;
+                }
+
+                const legend = $('#legend');
+                const details = $('#details');
+                const areaNameElement = $('#area-name');
+                const areaDescriptionElement = $('#area-description');
+                const areaImageElement = $('#area-image');
+                let layers = [];
+                let labelMarker = null;
+
+                geojsonFiles.forEach((geojson, index) => {
+                    const color = generateRandomColor(); // Generate random color for each area
+
+                    fetch(geojson.file)
+                        .then(response => response.json())
+                        .then(data => {
+                            const layer = L.geoJSON(data, {
+                                style: { color: color, weight: 2, fillOpacity: 0.5 }
+                            }).addTo(map);
+                            layers.push(layer); // Store the layer for later reference
+
+                            const bounds = layer.getBounds();
+                            const randomImage = `https://picsum.photos/400/300?random=${index}`;
+
+                            legend.append(`
+                                <div data-index="${index}" data-bounds='${JSON.stringify(bounds)}' data-name="${geojson.name}" data-description="${data.features[0]?.properties?.description || 'No description available'}" data-image="${randomImage}">
+                                    <span style="background-color: ${color};"></span>${geojson.name}
+                                </div>
+                            `);
+
+                            legend.on('click', `div[data-index="${index}"]`, function () {
+                                // Hide all layers
+                                layers.forEach(layer => map.removeLayer(layer));
+
+                                // Show the clicked area layer
+                                map.fitBounds(bounds, { padding: [20, 20] });
+                                layer.addTo(map);
+
+                                // Create or update the label marker at the center of the bounds
+                                if (labelMarker) {
+                                    map.removeLayer(labelMarker);
+                                }
+                                const center = bounds.getCenter();
+                                labelMarker = L.marker(center, {
+                                    icon: L.divIcon({
+                                        className: 'leaflet-label',
+                                        html: `<div style="font-size: 16px; font-weight: bold; color: ${color}; background: rgba(255, 255, 255, 0.7); padding: 5px; border-radius: 8px;">${geojson.name}</div>`,
+                                        iconSize: [100, 40],
+                                        iconAnchor: [50, 20]
+                                    })
+                                }).addTo(map);
+
+                                // Update details
+                                areaNameElement.text($(this).data('name'));
+                                areaDescriptionElement.text($(this).data('description'));
+                                areaImageElement.attr('src', $(this).data('image'));
+                                details.show();
+                            });
+                        });
                 });
 
-                //L.marker([-5.05, 119.71667], {icon: logopemda}).addTo(map).bindPopup('A pretty CSS popup.<br> Easily customizable.');
+                // Clear all areas and reset map
+                $('#clear-button').on('click', function () {
+                    layers.forEach(layer => map.removeLayer(layer));
+                    if (labelMarker) {
+                        map.removeLayer(labelMarker);
+                    }
+                    details.hide();
+                });
 
-                L.geoJson(geojsonFeature).addTo(map);
+                
 
             }
 
@@ -549,8 +652,7 @@
 
             }
             
-
-
+            
         </script>
     <!-- END SCRIPTS -->         
     </body>

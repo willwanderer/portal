@@ -6,6 +6,7 @@
     <!--  All snippets are MIT license http://bootdey.com/license -->
     <title>Cinta TEPE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../img/logo/CintaTepe1.ico" type="image/x-icon" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="css/utama.css" rel="stylesheet">
@@ -316,25 +317,25 @@
 <script type="text/javascript">
 
 
-    const audio = document.getElementById('audio');
-    const playButton = document.getElementById('playButton');
-    const playIcon = document.getElementById('playIcon');
+    // const audio = document.getElementById('audio');
+    // const playButton = document.getElementById('playButton');
+    // const playIcon = document.getElementById('playIcon');
 
-    function toggleMusic() {
-        if (audio.paused) {
-            audio.play();
-            playIcon.classList.remove('fa-play'); // Menghapus ikon play
-            playIcon.classList.add('fa-pause'); // Menambahkan ikon pause
-        } else {
-            audio.pause();
-            playIcon.classList.remove('fa-pause'); // Menghapus ikon pause
-            playIcon.classList.add('fa-play'); // Menambahkan ikon play
-        }
-    }
+    // function toggleMusic() {
+    //     if (audio.paused) {
+    //         audio.play();
+    //         playIcon.classList.remove('fa-play'); // Menghapus ikon play
+    //         playIcon.classList.add('fa-pause'); // Menambahkan ikon pause
+    //     } else {
+    //         audio.pause();
+    //         playIcon.classList.remove('fa-pause'); // Menghapus ikon pause
+    //         playIcon.classList.add('fa-play'); // Menambahkan ikon play
+    //     }
+    // }
 
     function kondisiload()
     {
-        swal.close();
+        //swal.close();
     }
 
 	function mulaicari()

@@ -31,12 +31,8 @@
 <!-- END PLUGINS -->
 
 <!-- START THIS PAGE PLUGINS-->     
-<link rel="stylesheet" href="js/plugins/leaflet/leaflet.css" />
-<script src="js/plugins/leaflet/leaflet.js"></script>
-
-<script type="text/javascript" src="js/plugins/leaflet/plugins/leaflet-ajax-gh-pages/dist/leaflet.ajax.js"></script>
-
-<script type="text/javascript" src="7302.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
 
 
 <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>        
@@ -47,8 +43,8 @@
 <script type="text/javascript" src="js/plugins/morris/morris.min.js"></script>       
 <script type="text/javascript" src="js/plugins/rickshaw/d3.v3.js"></script>
 <script type="text/javascript" src="js/plugins/rickshaw/rickshaw.min.js"></script>
-<script type='text/javascript' src='js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
-<script type='text/javascript' src='js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>                
+<!-- <script type='text/javascript' src='js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
+<script type='text/javascript' src='js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>                 -->
 <script type='text/javascript' src='js/plugins/bootstrap/bootstrap-datepicker.js'></script>                
 <script type="text/javascript" src="js/plugins/owl/owl.carousel.min.js"></script>      
 
@@ -80,5 +76,5 @@
 <script type="text/javascript" src="js/plugins.js"></script>        
 <script type="text/javascript" src="js/actions.js"></script>
 
-<script type="text/javascript" src="js/demo_dashboard.js"></script>
+<!-- <script type="text/javascript" src="js/demo_dashboard.js"></script> -->
 <!-- END TEMPLATE -->
