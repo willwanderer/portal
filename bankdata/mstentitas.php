@@ -87,7 +87,7 @@
                                                                     }
                                                                 ?>
                                                             </td>
-                                                            <td ><a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Detail Entitas" href="mstdetailentitas.php?entid=<?php echo $row["ENT_ID"]; ?>">Detail</td>
+                                                            <td ><a class="btn btn-primary btn-xs" data-toggle="tooltip" data-placement="top" title="Detail Entitas" href="mstdetailentitas.php?entid=<?php echo $row["ENT_ID"]; ?>">Detail</a></td>
                                                         </tr>
                                                     <?php
                                                 }

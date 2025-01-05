@@ -1,0 +1,28 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "MysqlDB",
+            "database": "portal_dbv1",
+            "username": "root",
+            "password": "mysqlwilly"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "PostgrSQLDB",
+            "database": "SMPDB",
+            "username": "postgres",
+            "password": "always!@#456"
+        }
+    ]
+}

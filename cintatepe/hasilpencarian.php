@@ -306,7 +306,7 @@
     <i class="fas fa-play" id="playIcon"></i> <!-- Ikon play dari Font Awesome -->
 </button>
 
-<audio id="audio" src="ZIGAZ - SAHABAT JADI CINTA.mp3" autoplay="autoplay" loop="loop"></audio>
+<!-- <audio id="audio" src="ZIGAZ - SAHABAT JADI CINTA.mp3" autoplay="autoplay" loop="loop"></audio> -->
 
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>

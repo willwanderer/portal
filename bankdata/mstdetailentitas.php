@@ -136,7 +136,7 @@
                                                         ?>
                                                             <div class="col-md-4 col-xs-4">
                                                                 <a class="friend" style="cursor:pointer;" data-toggle="tooltip" data-placement="top" title="<?php echo $valuedosir['PEG_NAMA'] ?>">
-                                                                    <img src="<?php echo aturprofil($valuedosir['PEG_FOTO'], $valuedosir['PEG_JENIS_KELAMIN']); ?>" height="55px" style="object-fit: cover; object-position: center;" onclick="kepegawai('<?php echo  $valuedosir['PEG_NIP_LAMA']?>')"/>
+                                                                    <img src="<?php echo aturprofil($valuedosir['PEG_FOTO'], $valuedosir['PEG_JENIS_KELAMIN']); ?>" onload="this.style.height = this.offsetWidth + 'px';" style="object-fit: cover; object-position: center;" onclick="kepegawai('<?php echo  $valuedosir['PEG_NIP_LAMA']?>')"/>
                                                                     <span><?php echo substr($valuedosir['PEG_NAMA'],0,7) . ".." ?></span>
                                                                 </a>                                            
                                                             </div>
@@ -156,7 +156,7 @@
                                                 ?>
                                                     <div class="col-md-4 col-xs-4">
                                                         <a class="friend" style="cursor:pointer;" data-toggle="tooltip" data-placement="top" title="<?php echo $valuerekan['PEG_NAMA'] ?>">
-                                                            <img src="<?php echo aturprofil($valuerekan['PEG_FOTO'], $valuerekan['PEG_JENIS_KELAMIN']); ?>" height="55px" style="object-fit: cover; object-position: center;" onclick="kepegawai('<?php echo  $valuerekan['PEG_NIP_LAMA']?>')"/>
+                                                            <img src="<?php echo aturprofil($valuerekan['PEG_FOTO'], $valuerekan['PEG_JENIS_KELAMIN']); ?>" onload="this.style.height = this.offsetWidth + 'px';" style="object-fit: cover; object-position: center;" onclick="kepegawai('<?php echo  $valuerekan['PEG_NIP_LAMA']?>')"/>
                                                             <span><?php echo substr($valuerekan['PEG_NAMA'],0,7) . ".." ?></span>
                                                         </a>                                            
                                                     </div>

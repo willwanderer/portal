@@ -66,7 +66,10 @@
 <script type="text/javascript" src="../js/Fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
 <link rel="stylesheet" type="text/css" href="../js/Fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
 
- <script type="text/javascript" src="js/plugins/summernote/summernote.js"></script>
+<!-- <script type="text/javascript" src="js/plugins/summernote/summernote.js"></script> -->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jodit/build/jodit.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jodit/build/jodit.min.js"></script>
 
 <!-- END THIS PAGE PLUGINS-->        
 
