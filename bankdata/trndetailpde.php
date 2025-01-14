@@ -344,12 +344,12 @@
                 window.location="trndetailpde.php?entid="+<?php echo $_GET['entid']?>+"&tahun="+$('#txttahunpde').val();
             }
 
-            function tampilformtambah(jenis)
+            function tampilformtambah(jenis, identitas)
             {
                 var halaman="trntambahskpdpde.php";
                 if(jenis == "SKPD")
                 {
-                    halaman="trntambahskpdpde.php";
+                    halaman="trntambahskpdpde.php?ident=" + identitas;
                 }
 
                 $.fancybox.open(

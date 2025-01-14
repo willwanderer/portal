@@ -33,7 +33,13 @@
             <a href="#"><span class="fa fa-table"></span> <span class="xn-text">Master</span></a>
             <ul>
                 <li><a href="mstentitas.php"><span class="fa fa-university"></span> Entitas</a></li>
-                <li><a href="mstbezettingpegawai.php"><span class="fa fa-users"></span> Bezetting Pegawai</a></li>
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-users"></span> Bezetting Pegawai</a>
+                    <ul>
+                        <li><a href="mstbezettingpegawai.php"><span class="fa fa-user"></span> Daftar Pegawai</a></li>
+                        <li><a href="mstmutasipegawai.php"><span class="fa fa-share-square-o"></span> Mutasi Pegawai</a></li>
+                    </ul>
+                </li>
                 <li><a href="mstpenanggungjawab.php"><span class="fa fa-tags"></span> Penanggung Jawab (LO)</a></li>
             </ul>
         </li>
@@ -46,7 +52,6 @@
         </li>
         <li class="xn-title">Transaction Section</li>
         <li><a href="trnpde.php"><span class="fa fa-desktop"></span> <span class="xn-text"> Pembaharuan Entitas</span></a></li>
-
         <li class="xn-title">Tools Section</li>
         <li><a href="trnpenydb.php"><span class="fa fa-refresh"></span> <span class="xn-text"> Penyelarasan Database</span></a></li>
         
