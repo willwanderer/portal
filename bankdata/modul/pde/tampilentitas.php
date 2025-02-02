@@ -15,5 +15,5 @@
 		array_push($data, array("ENT_ID" => $row['ENT_ID'], "ENT_NAMA" => $row['ENT_NAMA'], "ENT_LOGO" => "data:image/jpeg;base64," . base64_encode($row['ENT_LOGO'])));
     }
 	echo json_encode($data);
-  
+  $con->close();
 ?>

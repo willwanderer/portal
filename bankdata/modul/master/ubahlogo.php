@@ -24,4 +24,5 @@
     {
     	echo "Foto Tidak Tersedia";
     }
+	$con->close();
 ?>

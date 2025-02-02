@@ -17,4 +17,5 @@
             echo "Error: " . $stmt->error;
         }
     }
+    $con->close();
 ?>

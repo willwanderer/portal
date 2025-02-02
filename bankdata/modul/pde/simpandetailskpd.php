@@ -5,5 +5,5 @@
     $database = "bankdata_" . $_POST['tahunpde'];
     include("../../../modul/pengaturan/KoneksiDB.php");  
 
-   
+    $con->close();
 ?>

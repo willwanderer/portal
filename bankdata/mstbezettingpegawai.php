@@ -3,15 +3,6 @@
     <head>        
         <?php 
             include("metacss.php"); 
-
-            $jumlahpegawai = 0;
-
-            $result = $con->query("SELECT count(*) as 'jumlahc' FROM `PEGAWAI` where PEG_STATUS='Aktif' and SUBSTRING_INDEX(PEG_JABATAN, ' ', 1) = 'Pemeriksa'");
-            while($row = $result->fetch_assoc()) 
-            {
-                $jumlahpegawai=$row["jumlahc"];
-            }
-
         ?>
     </head>
     <body onload="kondisiload()">
@@ -27,13 +18,90 @@
 
                 <!-- PAGE TITLE -->
                 <div class="page-title">                    
-                    <h2><span class="fa fa-users"></span> Bezetting Pegawai <small><?php echo$jumlahpegawai ?> Pegawai Aktif di BPK Perwakilan Sulawesi Selatan</small></h2>
+                    <h2><span class="fa fa-users"></span> Bezetting Pegawai</h2>
                 </div>
                 <!-- END PAGE TITLE -->                
                 
                 <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">
-                    
+                    <!-- START WIDGETS -->                    
+                    <div class="row">
+                        <div class="col-md-3">
+                            
+                            <!-- START WIDGET SLIDER -->
+                            <div class="widget widget-default widget-carousel">
+                                <div class="owl-carousel" id="owl-example">
+                                    <div>                                    
+                                        <div class="widget-title">Total Pegawai</div>                                                                        
+                                        <div class="widget-subtitle">Pegawai Aktif</div>
+                                        <div class="widget-int" id="txttotalpegawai">0</div>
+                                    </div>
+                                    <div>                                    
+                                        <div class="widget-title">Total Pegawai</div>                                                                        
+                                        <div class="widget-subtitle">Pegawai Pemeriksa</div>
+                                        <div class="widget-int" id="txttotalpemeriksa">0</div>
+                                    </div>
+                                    <div>                                    
+                                        <div class="widget-title">Total Pegawai</div>                                                                        
+                                        <div class="widget-subtitle">Pegawai Non Pemeriksa</div>
+                                        <div class="widget-int" id="txttotalnonpemeriksa">0</div>
+                                    </div>
+                                </div>                                                        
+                            </div>         
+                            <!-- END WIDGET SLIDER -->
+                            
+                        </div>
+                        <div class="col-md-3">
+                            
+                            <!-- START WIDGET MESSAGES -->
+                            <div class="widget widget-default widget-item-icon" onclick="location.href='pages-messages.html';">
+                                <div class="widget-item-left">
+                                    <span class="fa fa-envelope"></span>
+                                </div>                             
+                                <div class="widget-data">
+                                    <div class="widget-int num-count">0</div>
+                                    <div class="widget-title">New messages</div>
+                                    <div class="widget-subtitle">In your mailbox</div>
+                                </div>      
+                            </div>                            
+                            <!-- END WIDGET MESSAGES -->
+                            
+                        </div>
+                        <div class="col-md-3">
+                            
+                            <!-- START WIDGET REGISTRED -->
+                            <div class="widget widget-default widget-item-icon" onclick="location.href='pages-address-book.html';">
+                                <div class="widget-item-left">
+                                    <span class="fa fa-user"></span>
+                                </div>
+                                <div class="widget-data">
+                                    <div class="widget-int num-count">0</div>
+                                    <div class="widget-title">Registred users</div>
+                                    <div class="widget-subtitle">On your website</div>
+                                </div>                          
+                            </div>                            
+                            <!-- END WIDGET REGISTRED -->
+                            
+                        </div>
+
+                        <div class="col-md-3">
+                            
+                            <!-- START WIDGET REGISTRED -->
+                            <div class="widget widget-danger widget-item-icon" onclick="location.href='pages-address-book.html';">
+                                <div class="widget-item-left">
+                                    <span class="fa fa-table"></span>
+                                </div>
+                                <div class="widget-data">
+                                    <div class="widget-int num-count" id="txtdatatidaklengkap">0</div>
+                                    <div class="widget-title">Data Pegawai</div>
+                                    <div class="widget-subtitle">Jumlah Data Pegawai dengan Data Tidak Lengkap</div>
+                                </div>                          
+                            </div>                            
+                            <!-- END WIDGET REGISTRED -->
+                            
+                        </div>
+                    </div>
+                    <!-- END WIDGETS -->  
                     <div class="row">
                         <div class="col-md-12">
                             
@@ -108,19 +176,6 @@
                         
 
                     </div>
-                    <!-- <div class="row">
-                        <div class="col-md-12">
-                            <ul class="pagination pagination-sm pull-right push-down-10 push-up-10">
-                                <li class="disabled"><a href="#">«</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>                                    
-                                <li><a href="#">»</a></li>
-                            </ul>                            
-                        </div>
-                    </div> -->
-
                 </div>
                 <!-- END PAGE CONTENT WRAPPER -->                               
             </div>            
@@ -131,7 +186,18 @@
         <?php include("audiojs.php"); ?>
 
         <script type="text/javascript">
-            
+            function kondisiload() {
+                tampilpegawai();
+            }
+
+            function tampilpegawai() {
+                
+            }
+
+            function tampilinformasi() {
+
+            }
+
             function caripegawai()
             {
                 var input = document.getElementById("txtpencarian");
@@ -143,7 +209,7 @@
                         nodes[i].style.display = "block";
                     } 
                     else {
-                      nodes[i].style.display = "none";
+                        nodes[i].style.display = "none";
                     }
                 }
             }

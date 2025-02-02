@@ -14,5 +14,5 @@
     {
         echo "Error: " . $sql . "<br>" . $con->error;
     }
-  
+    $con->close();
 ?>

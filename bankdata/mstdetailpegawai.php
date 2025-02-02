@@ -187,7 +187,6 @@
                         </div>
                         
                         <div class="col-md-9" id="divriwayatpemeriksaan">
-
                             <!-- START TIMELINE -->
                             <div class="timeline timeline-right">
                                 
@@ -223,7 +222,7 @@
                                                                     <div class="timeline-item timeline-item-right">
                                                                         <div class="timeline-item-info"><?php echo singkatjenispem($valuepem['PEM_JENIS']) ?></div>
                                                                         <div class="timeline-item-icon">
-                                                                             <a href="mstdetailentitas.php?entid=<?php echo $valuepem["ENT_ID"] ?>">
+                                                                            <a href="mstdetailentitas.php?entid=<?php echo $valuepem["ENT_ID"] ?>">
                                                                                 <img src="<?php echo 'data:image/jpeg;base64,'. base64_encode($valuepem['ENT_LOGO'])?>" alt="" width="45px" style="margin-left: -5px;margin-top: -5px"/>
                                                                             </a>
                                                                         </div>                                   
@@ -303,7 +302,112 @@
                                 <!-- END TIMELINE ITEM -->
                             </div>
                             <!-- END TIMELINE -->                            
+                        </div>
                             
+                        <div class="col-md-9" id="divdetailpegawai">
+                            <form class="form-horizontal">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title"><strong>Detail</strong> Pegawai</h3>
+                                    </div>
+                                    <div class="panel-body">                                                                    
+                                        <div class="row">
+                                            <div class="col-md-6"> 
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">NIP</label>
+                                                    <div class="col-md-9 col-xs-12">                                            
+                                                        <input type="text" class="form-control" id="txtnipdp" name="txtnipdp"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">NIP BPK</label>
+                                                    <div class="col-md-5 col-xs-12">                                            
+                                                        <input type="text" class="form-control" id="txtnipbpkdp" name="txtnipbpkdp"/>
+                                                    </div>
+                                                </div> 
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Nama</label>
+                                                    <div class="col-md-2 col-xs-12">                                            
+                                                        <input type="text" class="form-control" id="txtgelardepandp" name="txtgelardepandp"/>
+                                                    </div>
+                                                    <div class="col-md-5 col-xs-15">                                            
+                                                        <input type="text" class="form-control" id="txtnamadp" name="txtnamadp"/>
+                                                    </div>
+                                                    <div class="col-md-2 col-xs-12">                                            
+                                                        <input type="text" class="form-control" id="txtgelarbelakangdp" name="txtgelarbelakangdp"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Jenis Kelamin</label>
+                                                    <div class="col-md-9 col-xs-12">                                            
+                                                        <select class="form-control" id="txtjeniskelamindp" name="txtjeniskelamindp" >
+                                                            <option value="">-- Pilih Jenis Kelamin --</option>
+                                                            <option value="Pria">Pria</option>
+                                                            <option value="Wanita">Wanita</option>
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Status Pernikahan</label>
+                                                    <div class="col-md-9 col-xs-12">                                            
+                                                        <select class="form-control" id="txtstatuspenikahandp" name="txtstatuspenikahandp" >
+                                                            <option value="">-- Pilih Status Pernikahan --</option>
+                                                            <option value="Belum Nikah">Belum Nikah</option>
+                                                            <option value="Nikah">Nikah</option>
+                                                            <option value="Single Parent">Single Parent</option>
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Pendidikan</label>
+                                                    <div class="col-md-9 col-xs-12">                                            
+                                                        <select class="form-control" id="txtpendidikandp" name="txtpendidikandp" >
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">   
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Unit Organisasi</label>
+                                                    <div class="col-md-9 col-xs-12">                                            
+                                                        <select class="form-control" id="txtunitorganisasidp" name="txtunitorganisasidp" >
+                                                        </select> 
+                                                    </div>
+                                                </div>    
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Jabatan</label>
+                                                    <div class="col-md-9 col-xs-12">                                            
+                                                        <select class="form-control" id="txtjabatanidp" name="txtjabatanidp" >
+                                                        </select> 
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-md-3 control-label">Pangkat/ Golongan</label>
+                                                    <div class="col-md-6 col-xs-6">                                            
+                                                        <input type="text" class="form-control" id="txtpangkatdp" name="txtpangkatdp"/>
+                                                    </div>
+                                                    <div class="col-md-3 col-xs-3">                                            
+                                                        <input type="text" class="form-control" id="txtgolongandp" name="txtgolongandp"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">                                        
+                                                    <label class="col-md-3 control-label">Password</label>
+                                                    <div class="col-md-9 col-xs-12">
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><span class="fa fa-unlock-alt"></span></span>
+                                                            <input type="password" class="form-control"/>
+                                                        </div>            
+                                                        <span class="help-block">Password untuk masuk ke aplikasi Portal</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">                                 
+                                        <button class="btn btn-primary pull-right">Simpan Perubahan</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                         
                     </div>
@@ -393,41 +497,35 @@
 
             function pindahtab(statusmenu)
             {
+                $("#tabriwayatpemeriksaan").removeClass("active");
+                $("#tabdetailpegawai").removeClass("active");
+                $("#tabkompetensipegawai").removeClass("active");
+                $("#tabbenturankepentingan").removeClass("active");
+
+                $("#divriwayatpemeriksaan").css("display","none");
+                $("#divdetailpegawai").css("display","none");
+                $("#divkompetensipegawai").css("display","none");
+                $("#divbenturankepentingan").css("display","none");
+
                 if(statusmenu=="riwayatpemeriksaan")
                 {
-                    $("#tabriwayatpemeriksaan").removeClass("active");
-                    $("#tabdetailpegawai").removeClass("active");
-                    $("#tabkompetensipegawai").removeClass("active");
-                    $("#tabbenturankepentingan").removeClass("active");
-
                     $("#tabriwayatpemeriksaan").addClass("active");
+                    $("#divriwayatpemeriksaan").css("display","inline");
                 }
                 else if(statusmenu=="detailpegawai")
                 {
-                    $("#tabriwayatpemeriksaan").removeClass("active");
-                    $("#tabdetailpegawai").removeClass("active");
-                    $("#tabkompetensipegawai").removeClass("active");
-                    $("#tabbenturankepentingan").removeClass("active");
-
                     $("#tabdetailpegawai").addClass("active");
+                    $("#divdetailpegawai").css("display","inline");
                 }
                 else if(statusmenu=="kompetensipegawai")
                 {
-                    $("#tabriwayatpemeriksaan").removeClass("active");
-                    $("#tabdetailpegawai").removeClass("active");
-                    $("#tabkompetensipegawai").removeClass("active");
-                    $("#tabbenturankepentingan").removeClass("active");
-
                     $("#tabkompetensipegawai").addClass("active");
+                    $("#divkompetensipegawai").css("display","inline");
                 }
                 else if(statusmenu=="benturankepentingan")
                 {
-                    $("#tabriwayatpemeriksaan").removeClass("active");
-                    $("#tabdetailpegawai").removeClass("active");
-                    $("#tabkompetensipegawai").removeClass("active");
-                    $("#tabbenturankepentingan").removeClass("active");
-
                     $("#tabbenturankepentingan").addClass("active");
+                    $("#divbenturankepentingan").css("display","inline");
                 }
             }
         </script>

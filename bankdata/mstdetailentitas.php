@@ -117,11 +117,11 @@
                                     <a id="tabdaftarpejabat" class="list-group-item" onclick="pindahtab('daftarpejabat')" style="cursor:pointer;"><span class="fa fa-gavel"></span> Daftar Pejabat</a>
                                     <a id="tabforkopimda" class="list-group-item" onclick="pindahtab('forkopimda')" style="cursor:pointer;"><span class="fa fa-puzzle-piece"></span> 
                                     Forkopimda</a>
-                                     <a id="tabdaftarskpdkecamatan" class="list-group-item" onclick="pindahtab('daftarskpdkecamatan')" style="cursor:pointer;"><span class="fa fa-sitemap"></span> SKPD dan Kecamatan<span class="badge badge-success"><?php echo $jumlahpemeriksaan ?></span><span class="badge badge-success"><?php echo $jumlahpemeriksaan ?></span></a>
+                                    <a id="tabdaftarskpdkecamatan" class="list-group-item" onclick="pindahtab('daftarskpdkecamatan')" style="cursor:pointer;"><span class="fa fa-sitemap"></span> SKPD dan Kecamatan<span class="badge badge-success"><?php echo $jumlahpemeriksaan ?></span><span class="badge badge-success"><?php echo $jumlahpemeriksaan ?></span></a>
                                     <a id="tabriwayatpemeriksaan" class="list-group-item" onclick="pindahtab('riwayatpemeriksaan')" style="cursor:pointer;"><span class="fa fa-archive"></span> Riwayat Pemeriksaan<span class="badge badge-success"><?php echo $jumlahpemeriksaan ?></span></a>
                                     <a id="tablaporankeuangan" class="list-group-item" onclick="pindahtab('laporankeuangan')" style="cursor:pointer;"><span class="fa fa-file-text"></span> Laporan Keuangan</span></a>
                                     <a id="tabpenduduk" class="list-group-item" onclick="pindahtab('penduduk')" style="cursor:pointer;"><span class="fa fa-group"></span> Penduduk</span></a>
-                                     <a id="tabbumdblud" class="list-group-item" onclick="pindahtab('bumdblud')" style="cursor:pointer;"><span class="fa fa-hospital-o"></span> BUMD/BLUD</span></a>
+                                    <a id="tabbumdblud" class="list-group-item" onclick="pindahtab('bumdblud')" style="cursor:pointer;"><span class="fa fa-hospital-o"></span> BUMD/BLUD</span></a>
                                 </div>
                                 <div class="panel-body">
                                     <h4 class="text-title">Tim Dosir <span class="badge badge-success pull-right" style="cursor:pointer;" data-toggle="tooltip" data-placement="top" title="Manajemen Tim Dosir" onclick="pindahtab('timdosir')"><i class="fa fa-users"></i></span></h4>
@@ -144,7 +144,6 @@
                                                     }
                                                 } 
                                             }
-                                                  
                                         ?>                                        
                                     </div>
 
