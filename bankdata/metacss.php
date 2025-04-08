@@ -15,7 +15,7 @@
 <style type="text/css">
     .fotoprofile {
         width: 100px;
-        border: 3px solid #FFF;
+        border: 3px solid #fff;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         border-radius: 50%;
@@ -31,7 +31,7 @@
 
     if(!isset($_SESSION['portalniplama']) || $_SESSION['portalniplama']=="")
     {
-        header("location: ../login.php");
+        header("location: ../login.php?app=bankdata");
     }
 
     function singkatjenispem($jenpem)

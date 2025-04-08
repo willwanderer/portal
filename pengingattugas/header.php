@@ -25,7 +25,7 @@
         <div class="navbar-right">
             <ul class="nav navbar-nav">
                 <!-- User Account: style can be found in dropdown.less -->
-                 <?php
+                <?php
                     if(empty($_SESSION['portalnipbaru']))
                     {
                         ?>

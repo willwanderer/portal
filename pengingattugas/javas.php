@@ -79,12 +79,12 @@
 
 	function kelogin()
 	{
-		window.location = "../login.php";
+		window.location = "../login.php?app=pengingattugas";
 	}
 
 	function blink_text() 
 	{
-	    $('.blink').fadeOut(500);
-	    $('.blink').fadeIn(500);
+		$('.blink').fadeOut(500);
+		$('.blink').fadeIn(500);
 	}
 </script>     

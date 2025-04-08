@@ -102,7 +102,17 @@
 				{
 					if(data==0)
                     {
-                        window.location="index.php"
+						var url = "<?php 
+								if($_GET['app']=="bankdata") 
+								{
+									echo 'bankdata/index.php';
+								} 
+								elseif($_GET['app']=="pengingattugas")
+								{
+									echo 'pengingattugas/index.php';
+								}
+							?>";
+                        window.location=url;
                     }
                     else
                     {
